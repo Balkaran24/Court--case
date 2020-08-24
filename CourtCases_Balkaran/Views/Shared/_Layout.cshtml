@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/template/img/favicon.ico" rel="shortcut icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    @*<link rel="stylesheet" href="~/template/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/template/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/template/css/flaticon.css" />
+    <link rel="stylesheet" href="~/template/css/owl.carousel.css" />
+    <link rel="stylesheet" href="~/template/css/style.css" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Court Cases", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="main-menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Judge", "Index", "Judges")</li>
+                    <li>@Html.ActionLink("Lawyer", "Index", "Lawyers")</li>
+                    <li>@Html.ActionLink("Case", "Index", "Cases")</li>
+                    <li>@Html.ActionLink("Hearing", "Index", "Hearings")</li>
+                    <li>@Html.ActionLink("Party", "Index", "Parties")</li>
+                    <li>@Html.ActionLink("Court Room", "Index", "CourtRooms")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <!--====== Javascripts & Jquery ======-->
+    <script src="~/template/js/jquery-3.2.1.min.js"></script>
+    @*<script src="~/template/js/bootstrap.min.js"></script>*@
+    <script src="~/template/js/owl.carousel.min.js"></script>
+    <script src="~/template/js/circle-progress.min.js"></script>
+    <script src="~/template/js/main.js"></script>
+</body>
+</html>
